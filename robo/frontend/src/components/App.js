@@ -12,37 +12,9 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch("api/registration")
-      .then(response => {
-        if (response.status > 400) {
-          return this.setState(() => {
-            return { placeholder: "Something went wrong!" };
-          });
-        }
-        return response.json();
-      })
-      .then(data => {
-        this.setState(() => {
-          return {
-            data,
-            loaded: true
-          };
-        });
-      });
-  }
-
   render() {
     return (
-          <ul>
-            {this.state.data.map(user => {
-              return (
-                <li key={user.id}>
-                  {user.username} - {user.email}
-                </li>
-              );
-            })}
-          </ul>
+          <h1>Hi</h1>
     );
   }
 }
